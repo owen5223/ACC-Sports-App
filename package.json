@@ -1,0 +1,27 @@
+{
+  "name": "owens-webdev-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aalcott14/owens-webdev-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aalcott14/owens-webdev-project/issues"
+  },
+  "homepage": "https://github.com/aalcott14/owens-webdev-project#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-request-id": "^1.4.1",
+    "morgan": "^1.9.1",
+    "nocache": "^2.0.0",
+    "serve-index": "^1.9.1"
+  }
+}
