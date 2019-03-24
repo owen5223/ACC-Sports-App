@@ -25,25 +25,25 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/html/index.html'));
 });
 
-app.use('/basketball', express.static('public'));
+// app.use('/basketball', express.static('public'));
 app.get('/basketball', (req, res) => {
   res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
   res.sendFile(path.join(__dirname, '../public/html/basketball.html'));
 });
 
-app.use('/football', express.static('public'));
+// app.use('/football', express.static('public'));
 app.get('/football', (req, res) => {
   res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
   res.sendFile(path.join(__dirname, '../public/html/football.html'));
 });
 
-app.use('/golf', express.static('public'));
+// app.use('/golf', express.static('public'));
 app.get('/golf', (req, res) => {
   res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
   res.sendFile(path.join(__dirname, '../public/html/golf.html'));
 });
 
-app.use('/baseball', express.static('public'));
+// app.use('/baseball', express.static('public'));
 app.get('/baseball', (req, res) => {
   res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
   res.sendFile(path.join(__dirname, '../public/html/baseball.html'));
