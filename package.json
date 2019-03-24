@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/aalcott14/owens-webdev-project#readme",
   "dependencies": {
+    "chalk": "^2.4.2",
     "express": "^4.16.4",
     "express-request-id": "^1.4.1",
     "morgan": "^1.9.1",

@@ -1,22 +1,19 @@
 const express = require('express');
-var path = require('path');
+const path = require('path');
 const addRequestId = require('express-request-id')({setHeader: false});
-const nocache = require('nocache');
+const morgan = require('morgan');
+const chalk = require('chalk')
 
 const app = express();
 const port = 3000;
 
 // logging middleware
 app.use(addRequestId)
-morgan = require('morgan')
 morgan.token('id', (req) => req.id.split('-')[0])
 app.use(morgan(
-  "[:date[web] #:id] Started :method :url",
+  `| ${chalk.white(':date[web]')} | ${chalk.white('#:id')} | ${chalk.white('Started :method :url')}`,
   {immediate: true}))
-app.use(morgan("[:date[web] #:id] Completed :status :res[content-length] bytes in :response-time ms"))
-
-// disable caching
-// app.use(nocache());
+app.use(morgan(`| ${chalk.green(':date[web]')} | ${chalk.green('#:id')} | ${chalk.green('Completed :status :res[content-length] bytes in :response-time ms')}`))
 
 //routing
 app.use('/', express.static('public'));
@@ -48,4 +45,4 @@ app.get('/baseball', (req, res) => {
 
 
 //listen
-app.listen(port, () => console.log("Welcome to Owen's web server!\nListening on port 3000....."));
+app.listen(port, () => console.log("Welcome to Owen's web server!\nListening on port 3000.....\n"));
