@@ -22,7 +22,6 @@
     "express": "^4.16.4",
     "express-request-id": "^1.4.1",
     "morgan": "^1.9.1",
-    "nocache": "^2.0.0",
     "serve-index": "^1.9.1"
   }
 }
