@@ -11,9 +11,9 @@ app.use(addRequestId)
 morgan = require('morgan')
 morgan.token('id', (req) => req.id.split('-')[0])
 app.use(morgan(
-  "[:date[iso] #:id] Started :method :url for :remote-addr",
+  "[:date[web] #:id] Started :method :url",
   {immediate: true}))
-app.use(morgan("[:date[iso] #:id] Completed :status :res[content-length] in :response-time ms"))
+app.use(morgan("[:date[web] #:id] Completed :status :res[content-length] bytes in :response-time ms"))
 
 // disable caching
 // app.use(nocache());
