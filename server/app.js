@@ -13,7 +13,7 @@ morgan.token('id', (req) => req.id.split('-')[0])
 app.use(morgan(
   `| ${chalk.white(':date[web]')} | ${chalk.white('#:id')} | ${chalk.white('Started :method :url')}`,
   {immediate: true}))
-app.use(morgan(`| ${chalk.green(':date[web]')} | ${chalk.green('#:id')} | ${chalk.green('Completed :status :res[content-length] bytes in :response-time ms')}`))
+app.use(morgan(`| ${chalk.green(':date[web]')} | ${chalk.green('#:id')} | ${chalk.green('Completed :status | :res[content-length] bytes in :response-time ms')}`))
 
 //routing
 app.use('/', express.static('public'));
