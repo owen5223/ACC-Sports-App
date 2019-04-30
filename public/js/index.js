@@ -2,7 +2,6 @@ $(document).ready(function() {
   $(".btn").hover(function() {
     $(".btn").addClass("animated jello").css("background-color","#6d0d7a")
   })
-  $('.carousel').carousel()
   // $.ajax({
   //     url:"https://api.fantasydata.net/v3/cbb/scores/JSON/LeagueHierarchy",
   //     beforeSend: function(xhrObj){
