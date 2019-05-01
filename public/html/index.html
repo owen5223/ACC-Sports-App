@@ -14,38 +14,51 @@
     href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
   </head>
   <body>
-    <div class="title">
-      <h1> ACC SPORTS </h1>
-    </div>
-    <div class="sports">
-      <a href="/basketball">
-        <button type="button" class="btn btn-primary">BASKETBALL</button>
-      </a>
-      
-      <a href="/baseball">
-        <button type="button" class="btn btn-primary">BASEBALL</button>
-      </a>
-      <a href="/football">
-        <button type="button" class="btn btn-primary">FOOTBALL</button>
-      </a>
-      <a href="/golf">
-        <button type="button" class="btn btn-primary">GOLF</button>
-        </a>
-    </div>
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="../images/clemsonfootball.jpg" class="d-block w-100" alt="...">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="">
+        <div class="title">
+          <h1> ACC SPORTS </h1>
         </div>
-        <div class="carousel-item">
-          <img src="../images/uncbaseball.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="../images/viginaplayer.jpg" class="d-block w-100" alt="...">
+      </a>
+ 
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="/basketball">
+            <button type="button" class="btn btn-primary">BASKETBALL</button>
+          </a>
+          <a class="nav-item nav-link" href="/baseball">
+            <button type="button" class="btn btn-primary">BASEBALL</button>
+          </a>
+          <a class="nav-item nav-link" href="/football">
+            <button type="button" class="btn btn-primary">FOOTBALL</button>
+          </a>
+          <a class="nav-item nav-link" href="/golf">
+            <button type="button" class="btn btn-primary">GOLF</button>
+          </a>
         </div>
       </div>
+    </nav>
+   
+   
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../images/clemsonfootball.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="../images/uncbaseball.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="../images/viginaplayer.jpg" class="d-block w-100" alt="...">
+      </div>
+      </div>
+      
     </div>
-    
     <!-- Display which sports have games going on with links to their page -->
     <!-- Add picture carousel -->
     <!-- Display top headlines with newsapi.org, see API key in screenshot -->
