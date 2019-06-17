@@ -31,3 +31,7 @@ body{
 .carousel-item{
   height:100vh;
 }
+.spinner-grow{
+  width: 80px;
+  height:80px;
+}
