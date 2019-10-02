@@ -26,9 +26,12 @@ $(document).ready(function() {
         })
         var allTeams = apTeams.concat(nullTeams)
         for (var i = 0; i < allTeams.length; i++) {
-          var team = document.createTextNode(allTeams[i].School);
-          var el = document.createElement('li');
-          el.appendChild(team);
+         
+          var el = $("<li></li>").append(allTeams[i].School)
+          var logo= $("<img />").attr("src",allTeams[i].TeamLogoUrl).css("width", "40px").css("margin-left","10px")
+          $(el).append(logo);
+          
+         
           $('#topTeamsOrderedList').append(el);
   
         }
