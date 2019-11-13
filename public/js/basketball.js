@@ -31,7 +31,8 @@ $(document).ready(function() {
           var logo= $("<img />").attr("src",allTeams[i].TeamLogoUrl).css("width", "40px").css("margin-left","10px")
           $(el).append(logo);
           $(el).on("click", function(e) {
-            $("#playersList").empty().addClass("spinner-grow mt-3 ml-5 ")
+            $("#selectTeam").hide()
+            $("#playersList").addClass("spinner-grow mt-3 ml-5 ")
             var school= $(e.currentTarget).data().school
             $.ajax({
               url:"https://api.sportsdata.io/v3/cbb/scores/json/Players/"+school,
@@ -45,6 +46,19 @@ $(document).ready(function() {
             }).done(function(data){
               console.log(data)
               $("#playersList").removeClass("spinner-grow mt-3 ml-5")
+              $("#playerTable").show();
+              $("#playerRows").empty()
+              for (var i = 0; i < data.length; i++) {
+                var el = $("<tr></tr>");
+                var jersey=$('<td></td>').text(data[i].Jersey);
+                var first=$('<td></td>').text(data[i].FirstName);
+                var last=$('<td></td>').text(data[i].LastName);
+                var position=$('<td></td>').text(data[i].Position);
+                var grade=$('<td></td>').text(data[i].Class);
+                $(el).append(jersey).append(first).append(last).append(position).append(grade)
+              $("#playerRows").append(el)
+
+              }
             })
           })
          
