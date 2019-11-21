@@ -39,3 +39,17 @@ body{
 #playerTable{
   display:none;
 }
+#playersList{
+  font-size:18pt;
+}
+
+.playerStats{
+  background-color:rgba(171, 199, 199, 0.5);
+  
+  overflow-y:scroll;
+  height:100vh;
+}
+
+.topTeams{
+  /* position:sticky; */
+}
