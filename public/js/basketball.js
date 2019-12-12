@@ -26,8 +26,8 @@ $(document).ready(function() {
         })
         var allTeams = apTeams.concat(nullTeams)
         for (var i = 0; i < allTeams.length; i++) {
-         
-          var el = $("<li></li>").append(allTeams[i].School).data("school",allTeams[i].Key)
+         var schoolName = $("<span></span>").text(allTeams[i].School).css("cursor","pointer")
+          var el = $("<li></li>").append(schoolName).data("school",allTeams[i].Key)
           var logo= $("<img />").attr("src",allTeams[i].TeamLogoUrl).css("width", "40px").css("margin-left","10px")
           $(el).append(logo);
           $(el).on("click", function(e) {
