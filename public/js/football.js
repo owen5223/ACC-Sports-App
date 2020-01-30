@@ -12,8 +12,10 @@ $(document).ready(function() {
       type: "GET",
   })
   .done(function(data) {
+  
       $("#topTeamsList").removeClass("spinner-grow mt-3 ml-5")
-      var accTeams= data[2].Teams; //accTeams is array of objects that contain information about each team
+      var accTeams= data[2].Teams.concat(data[3].Teams)//accTeams is array of objects that contain information about each team
+      
       var apTeams = accTeams.filter(function(team){
         return team.ApRank !== null
       }).sort(function(a,b){
@@ -44,7 +46,6 @@ $(document).ready(function() {
 
         
           }).done(function(data){
-            console.log(data)
             $("#playersList").removeClass("spinner-grow mt-3 ml-5")
             $("#playerTable").show();
             $("#playerRows").empty()
