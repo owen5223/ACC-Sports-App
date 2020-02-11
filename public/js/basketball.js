@@ -53,6 +53,14 @@ $(document).ready(function() {
                 var jersey=$('<td></td>').text(data[i].Jersey);
                 var first=$('<td></td>').text(data[i].FirstName);
                 var last=$('<td></td>').text(data[i].LastName);
+                var lastName = $('<span></span>').text(data[i].LastName)
+              var last=$('<td></td>').append(lastName)
+              if(data[i].InjuryStatus){
+                var injuryIcon=$('<img />').attr("src","../images/injurry.png").css("width", "40px").css("margin-left","10px")
+                $(last).append(injuryIcon)
+                $(injuryIcon).popover({title:"Injury Report",content:data[i].InjuryNotes});
+
+              }
                 var position=$('<td></td>').text(data[i].Position);
                 var grade=$('<td></td>').text(data[i].Class);
                 $(el).append(jersey).append(first).append(last).append(position).append(grade)
