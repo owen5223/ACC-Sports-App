@@ -53,17 +53,25 @@ $(document).ready(function() {
             for (var i = 0; i < data.length; i++) {
               var el = $("<tr></tr>");
               var jersey=$('<td></td>').text(data[i].Jersey);
-              var first=$('<td></td>').text(data[i].FirstName);
-              var lastName = $('<span></span>').text(data[i].LastName)
-              var last=$('<td></td>').append(lastName)
+              var name = $('<span></span>').text(data[i].FirstName + " " + data[i].LastName).css("cursor","pointer").data(data[i]).on("click",function(e){
+                $("#playerDetailModal").modal();
+                var name =$(e.currentTarget).text()
+                $("#playerDetailModalLabel").text(name)
+                var player = $(e.currentTarget).data()
+                var birthStateLabel = $("<h5>Birth State:</h5>")
+               var birthState = $('<div></div>').append(birthStateLabel).append(player.BirthState)
+               $("#playerDetailModalBody").append(birthState)
+                console.log(player)
+              })
+              var fullName=$('<td></td>').append(name)
               if(data[i].InjuryStatus){
-                var injuryIcon=$('<img />').attr("src","../images/injurry.png").css("width", "40px").css("margin-left","10px")
-                $(last).append(injuryIcon)
+                var injuryIcon=$('<img />').attr("src","../images/injurry.png").css("width", "40px").css("margin-left","10px").css("cursor","pointer")
+                $(fullName).append(injuryIcon)
                 $(injuryIcon).popover({title:"Injury Report",content:data[i].InjuryNotes});
               }
               var position=$('<td></td>').text(data[i].Position);
               var grade=$('<td></td>').text(data[i].Class);
-              $(el).append(jersey).append(first).append(last).append(position).append(grade)
+              $(el).append(jersey).append(fullName).append(position).append(grade)
             $("#playerRows").append(el)
 
             }
